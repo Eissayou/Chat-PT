@@ -1,0 +1,23 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.content {
+  flex: 1;
+  margin-left: 250px; /* Sidebar width */
+  min-height: 100vh;
+  background-color: var(--background-light);
+  width: calc(100% - 250px); /* Subtract sidebar width */
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+    margin-top: 60px;
+    width: 100%;
+  }
+} 

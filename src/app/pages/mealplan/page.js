@@ -1,7 +1,6 @@
 // pages/myplans2.js
 "use client"
 import React, { useState } from 'react';
-import Sidebar from "@/components/sidebar_components/sidebar";
 import styles from './NutritionPlans.module.css';
 
 const mealData = {
@@ -61,7 +60,6 @@ export default function NutritionPlans() {
 
   return (
     <div className={styles.container}>
-      <Sidebar />
       <main className={styles.main}>
         <h1 className={styles.header}>Weekly Meal Plan</h1>
 

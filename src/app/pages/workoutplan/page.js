@@ -1,7 +1,6 @@
 // pages/workouts.js
 "use client"
 import React, { useState } from 'react';
-import Sidebar from "@/components/sidebar_components/sidebar";
 import styles from './styles/Workouts.module.css';
 
 const weeklyWorkoutJSON = {
@@ -52,7 +51,6 @@ export default function WeeklyWorkout() {
 
   return (
     <div className={styles.container}>
-      <Sidebar />
       <main className={styles.main}>
         <h1 className={styles.header}>Weekly Workout Plan</h1>
 
