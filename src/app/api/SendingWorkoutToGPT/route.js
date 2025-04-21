@@ -13,7 +13,7 @@ export async function POST(request) {
   try {
     // 1. Get the form data from the request
     const formData = await request.formData();
-    const videoFile = formData.get('video'); // 'video' should match the name attribute in your form input
+    const videoFile = formData.get('video');
 
     // 2. Basic Validation
     if (!videoFile) {
@@ -51,14 +51,25 @@ export async function POST(request) {
           },
         },
         {
-            text: `Analyze the workout video and respond using the format below:
-          1. Exercise Detected: [State the name of the exercise]
-          2. Form Evaluation: [Briefly describe how the form looks overall — what was done well or poorly]
-          3. Issues Identified: [List specific form issues, if any — use bullet points]
-          4. Corrections & Tips: [For each issue, explain how to fix it — clear, helpful suggestions]
-          
-          Keep the response clear and structured, with 2–4 sentences per section if needed. Avoid filler commentary.`,
-          },
+          text: `Analyze the uploaded workout video and return your answer using **Markdown formatting**. Follow this structure:
+        
+        ### 1. **Exercise Detected**
+        State the primary exercise performed.
+        
+        ### 2. **Overall Form Evaluation**
+        Briefly describe overall form quality in 2–3 concise sentences.
+        
+        ### 3. **Issues Identified**
+        Use bullet points. If no major issues exist, say: _No significant issues found._
+        
+        ### 4. **Corrections & Tips**
+        For each issue, provide a matching fix using this format:
+        - **Issue:** [short description]  
+          **Tip:** [clear and helpful suggestion]
+        
+        Use clear section headers and structured formatting. Avoid filler commentary or acknowledging this prompt. Output should be fully Markdown-compatible.`
+        }
+        ,
       ];
       
       const response = await ai.models.generateContent({
@@ -79,14 +90,3 @@ export async function POST(request) {
         return NextResponse.json({ summary });
     }
 }
-
-// Optional: Add configuration for body size limit if handling larger videos
-// This might be necessary as API routes have default limits (e.g., 4MB)
-// export const config = {
-//   api: {
-//     bodyParser: {
-//       sizeLimit: '100mb', // Adjust as needed, but be mindful of server/platform limits
-//     },
-//   },
-// };
-// Note: config export works for Pages Router. For App Router, limits are often configured at the deployment platform level (Vercel, etc.) or potentially via Next.js config - check current Next.js docs.

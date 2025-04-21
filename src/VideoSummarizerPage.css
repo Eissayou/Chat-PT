@@ -85,11 +85,32 @@
   }
   
   /* Summary Box */
-  .summaryBox {
-    background: #eef2ff;
-    border-radius: 8px;
-    padding: 16px;
+  .summary-box {
+    background-color: #f1f5ff;
+    padding: 24px;
+    border-radius: 12px;
+    line-height: 1.8;
+    font-size: 16px;
   }
+  .summary-box h1,
+.summary-box h2,
+.summary-box h3 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.summary-box p {
+  margin-bottom: 12px;
+}
+
+.summary-box ul {
+  padding-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+  
   
   .summaryTitle {
     margin: 0 0 0.5rem 0;

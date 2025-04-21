@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import "../../../VideoSummarizerPage.css";
+import "./VideoSummarizerPage.css";
+import ReactMarkdown from 'react-markdown';
+
 
 export default function VideoSummarizerPage() {
   /* ---------------- State ---------------- */
@@ -66,7 +68,7 @@ export default function VideoSummarizerPage() {
   return (
     <main className="page">
       <div className="card">
-        <h1 className="title">Video Summarizer</h1>
+        <h1 className="title">Video Form Critique</h1>
 
         <form onSubmit={handleSubmit} className="form" encType="multipart/form-data">
           <label className="label">
@@ -92,9 +94,8 @@ export default function VideoSummarizerPage() {
         {error && <p className="error">{error}</p>}
 
         {summary && (
-          <div className="summaryBox">
-            <h2 className="summaryTitle">Summary</h2>
-            <p className="summaryText">{summary}</p>
+          <div className="summary-box">
+            <ReactMarkdown>{summary}</ReactMarkdown>
           </div>
         )}
       </div>
