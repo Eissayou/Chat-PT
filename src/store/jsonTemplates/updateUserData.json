@@ -1,0 +1,15 @@
+{   "message": "Response to users prompt",
+    "action": "updateUserData",
+    "data": {
+      "username": "alexfit123",
+      "height": "175cm",
+      "weight": "165lbs",
+      "age": "27",
+      "gender": "male",
+      "bench": "185lbs",
+      "squat": "225lbs",
+      "deadlift": "275lbs",
+      "mileTime": "7m 30s"
+    }
+}
+  

@@ -1,0 +1,161 @@
+/* ChatPage.module.css */
+
+.chatContainer {
+    margin: 2rem auto; /* Equivalent to my-8 mx-auto */
+    max-width: 32rem; /* Equivalent to max-w-lg */
+    height: calc(100vh - 4rem); /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e5e7eb; /* border-gray-200 */
+    border-radius: 0.5rem; /* rounded-lg */
+    background-color: #fff; /* bg-white */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    overflow: hidden; /* Ensure child borders/shadows don't leak */
+  }
+  
+  .header {
+    padding: 1rem; /* p-4 */
+    border-bottom: 1px solid #e5e7eb; /* border-b border-gray-200 */
+    text-align: center; /* text-center */
+  }
+  
+  .title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+  }
+  
+  .nameHighlight {
+    color: #2563eb; /* text-blue-600 */
+    font-weight: 700; /* font-bold */
+  }
+  
+  .messageList {
+    flex: 1 1 0%; /* flex-1 */
+    padding: 1rem; /* p-4 */
+    overflow-y: auto; /* overflow-y-auto */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Similar to space-y-4 on parent, using gap is often better */
+  }
+  
+  .emptyState {
+      text-align: center;
+      color: #6b7280; /* text-gray-500 */
+      margin: auto; /* Center vertically and horizontally in flex container */
+  }
+  
+  .messageWrapper {
+    display: flex;
+    max-width: 80%; /* max-w-[80%] */
+  }
+  
+  .userWrapper {
+    justify-content: flex-end; /* Push user messages right */
+    margin-left: auto; /* Ensure it stays right */
+  }
+  
+  .modelWrapper {
+    justify-content: flex-start; /* Keep model messages left */
+    margin-right: auto; /* Ensure it stays left */
+  }
+  
+  .systemWrapper {
+    justify-content: center; /* Center system messages */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .messageBubble {
+    padding: 0.5rem 0.75rem; /* px-3 py-2 */
+    border-radius: 0.5rem; /* rounded-lg */
+    font-size: 0.875rem; /* text-sm */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+    word-wrap: break-word; /* Prevent long words overflowing */
+  }
+  
+  .userMessage {
+    background-color: #2563eb; /* bg-blue-600 */
+    color: white; /* text-white */
+  }
+  
+  .modelMessage {
+    background-color: #f3f4f6; /* bg-gray-100 */
+    color: #1f2937; /* text-gray-800 */
+  }
+  
+  .systemMessage {
+      background-color: #fee2e2; /* bg-red-100 */
+      color: #b91c1c; /* text-red-700 */
+      font-style: italic;
+  }
+  
+  .loadingIndicator {
+    padding: 0 1rem 0.5rem 1rem; /* px-4 pb-2 */
+    text-align: center;
+    font-size: 0.875rem; /* text-sm */
+    color: #6b7280; /* text-gray-500 */
+  }
+  
+  .inputArea {
+    padding: 1rem; /* p-4 */
+    border-top: 1px solid #e5e7eb; /* border-t border-gray-200 */
+    background-color: #fff; /* Ensure background */
+  }
+  
+  .inputForm {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* gap-2 */
+  }
+  
+  .messageInput {
+    flex: 1 1 0%; /* flex-1 */
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    border: 1px solid #d1d5db; /* border border-gray-300 */
+    border-radius: 0.5rem; /* rounded-lg */
+    font-size: 0.875rem; /* text-sm */
+  }
+  
+  .messageInput:focus {
+    outline: none;
+    border-color: #2563eb; /* focus:border-blue-500 */
+    box-shadow: 0 0 0 1px #2563eb; /* focus:ring-1 focus:ring-blue-500 */
+  }
+  
+  .messageInput:disabled {
+    background-color: #f3f4f6; /* disabled:bg-gray-100 */
+    cursor: not-allowed;
+  }
+  
+  .sendButton {
+    display: inline-flex; /* To center icon */
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    background-color: #2563eb; /* bg-blue-600 */
+    color: white; /* text-white */
+    border: none;
+    border-radius: 0.5rem; /* rounded-lg */
+    cursor: pointer;
+    transition: background-color 150ms ease-in-out; /* transition-colors */
+  }
+  
+  .sendButton:hover {
+    background-color: #1d4ed8; /* hover:bg-blue-700 */
+  }
+  
+  .sendButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #2563eb; /* focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 - approximation */
+  }
+  
+  .sendButton:disabled {
+    opacity: 0.5; /* disabled:opacity-50 */
+    cursor: not-allowed; /* disabled:cursor-not-allowed */
+  }
+  
+  /* Style for the SVG icon inside the button */
+  .sendButton svg {
+      width: 1.25rem; /* w-5 */
+      height: 1.25rem; /* h-5 */
+  }

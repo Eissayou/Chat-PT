@@ -1,0 +1,18 @@
+{
+    "message": "Response to users prompt",
+    "action": "updateUserGoals",
+    "data": {
+      "workoutsPerWeek": 4,
+      "timePerWorkoutInHours": "1.5",
+      "allocatedCaloriesPerDay": 2500,
+      "strengthExerciseGoals": {
+        "bench": "220",
+        "squat": "290"
+      },
+      "cardioExerciseGoals": {
+        "runningMile": "500s",
+        "rowingDistance": "200m"
+      }
+    }
+  }
+  

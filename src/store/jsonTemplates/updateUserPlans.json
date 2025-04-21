@@ -1,0 +1,93 @@
+{
+    "message": "Response to users prompt",
+    "action": "updateUserPlans",
+    "data": {
+      "username": "alexfit123",
+      "workout": {
+        "Monday": {
+            "category": "Upper body strength",
+            "exercises": {
+                "bench press": {
+                    "sets": 3,
+                    "reps": 8,
+                    "weight": 150,
+                    "rest": "120s"
+                },
+                "push press": {
+                    "sets": 4,
+                    "reps": 12,
+                    "weight": 90,
+                    "rest": "90s"
+                }
+            }
+        },
+        "Tuesday": {
+            "category": "Cardio",
+            "exercises": {
+                "treadmill run": {
+                    "duration": "30min",
+                    "pace": "6mph"
+                },
+                "jump rope": {
+                    "duration": "10min"
+                }
+            }
+        },
+        "Wednesday": "Rest",
+        "Thursday": "Rest",
+        "Friday": "Rest",
+        "Saturday": {
+            "category": "Yoga / Recovery",
+            "exercises": {
+                "sun salutations": {
+                    "rounds": 5,
+                    "duration": "20min"
+                },
+                "foam rolling": {
+                    "duration": "15min"
+                }
+            }
+        },
+        "Sunday": "Rest"
+        }
+      },
+     "meal": {
+        "Monday": {
+            "breakfast": "Greek yogurt with honey and granola",
+            "lunch": "Grilled chicken salad with quinoa",
+            "dinner": "Baked salmon with asparagus and brown rice"
+        },
+        "Tuesday": {
+            "breakfast": "Oatmeal with banana and almonds",
+            "lunch": "Turkey and avocado sandwich on whole grain bread",
+            "dinner": "Stir-fried tofu with vegetables and soba noodles"
+        },
+        "Wednesday": {
+            "breakfast": "Smoothie with spinach, banana, and protein powder",
+            "lunch": "Chicken burrito bowl with black beans and rice",
+            "dinner": "Grilled shrimp tacos with cabbage slaw"
+        },
+        "Thursday": {
+            "breakfast": "Egg white omelet with spinach and feta",
+            "lunch": "Lentil soup with whole grain toast",
+            "dinner": "Beef and veggie stir-fry with jasmine rice"
+        },
+        "Friday": {
+            "breakfast": "Peanut butter on whole grain toast with a side of berries",
+            "lunch": "Hummus wrap with veggies and a hard-boiled egg",
+            "dinner": "Grilled steak, roasted sweet potatoes, and steamed broccoli"
+        },
+        "Saturday": {
+            "breakfast": "Avocado toast with poached eggs",
+            "lunch": "Soba noodle salad with edamame and sesame dressing",
+            "dinner": "Vegetarian chili with cornbread"
+        },
+        "Sunday": {
+            "breakfast": "Protein pancakes with fruit and almond butter",
+            "lunch": "Quinoa bowl with roasted veggies and tahini",
+            "dinner": "Baked chicken thighs with mashed potatoes and green beans"
+        }
+        },
+        "invalidDate": "04/17/25T00:00"
+  }
+  
