@@ -67,7 +67,7 @@ export async function POST(request) {
         - **Issue:** [short description]  
           **Tip:** [clear and helpful suggestion]
         
-        Use clear section headers and structured formatting. Avoid filler commentary or acknowledging this prompt. Output should be fully Markdown-compatible.`
+        Use clear section headers and structured formatting. Avoid filler commentary or acknowledging this prompt. Output should be fully Markdown-compatible. Finally, if video doesnt seem like a workout, simply respond: "This doesnt seem like a workout, please upload a video of you working out so I can check your form."`
         }
         ,
       ];
