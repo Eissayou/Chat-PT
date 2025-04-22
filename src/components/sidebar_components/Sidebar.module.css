@@ -23,19 +23,24 @@
 .toggleButton {
   position: absolute;
   top: 1rem;
-  right: 1rem;
-  background: none;
+  right: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--primary-color);
+  color: #fff;
   border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--color-text);
-  padding: 0.5rem;
   border-radius: 50%;
-  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .toggleButton:hover {
-  background-color: var(--color-background-hover);
+  background-color: #0712e1;
 }
 
 .logo {
@@ -53,16 +58,46 @@
 }
 
 .link {
-  padding: 0.75rem 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background: transparent;
   color: var(--color-text);
   text-decoration: none;
-  border-radius: var(--border-radius);
-  transition: all 0.2s ease;
+  border: none;
+  border-radius: 9999px;           /* full pill shape */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, var(--primary-color), var(--success-color));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
 .link:hover {
-  background-color: var(--color-background-hover);
-  color: var(--color-primary);
+  background: var(--primary-color);
+  color: #fff;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.link:hover::before {
+  opacity: 0.1;
+}
+
+.link:active {
+  transform: translateX(2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .overlay {
