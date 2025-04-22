@@ -3,7 +3,7 @@
 import { useState } from "react";
 import "./VideoSummarizerPage.css";
 import ReactMarkdown from 'react-markdown';
-
+import styles from "../../page.module.css";
 
 export default function VideoSummarizerPage() {
   /* ---------------- State ---------------- */
@@ -66,39 +66,43 @@ export default function VideoSummarizerPage() {
 
   /* ---------------- UI ---------------- */
   return (
-    <main className="page">
-      <div className="card">
-        <h1 className="title">Video Form Critique</h1>
+    <div className={styles.pageContainer}>
+      <div className={styles.mainContent}>
+        <main className="page">
+          <div className="card">
+            <h1 className="title">Video Form Critique</h1>
 
-        <form onSubmit={handleSubmit} className="form" encType="multipart/form-data">
-          <label className="label">
-            Select Video (MP4, ≤ 50 MB):
-            <input
-              type="file"
-              accept="video/mp4"
-              onChange={handleFileChange}
-              disabled={isLoading}
-              className="fileInput"
-            />
-          </label>
+            <form onSubmit={handleSubmit} className="form" encType="multipart/form-data">
+              <label className="label">
+                Select Video (MP4, ≤ 50 MB):
+                <input
+                  type="file"
+                  accept="video/mp4"
+                  onChange={handleFileChange}
+                  disabled={isLoading}
+                  className="fileInput"
+                />
+              </label>
 
-          <button
-            type="submit"
-            disabled={isLoading || !selectedFile}
-            className="submitBtn"
-          >
-            {isLoading ? "Summarizing…" : "Get Summary"}
-          </button>
-        </form>
+              <button
+                type="submit"
+                disabled={isLoading || !selectedFile}
+                className="submitBtn"
+              >
+                {isLoading ? "Summarizing…" : "Get Summary"}
+              </button>
+            </form>
 
-        {error && <p className="error">{error}</p>}
+            {error && <p className="error">{error}</p>}
 
-        {summary && (
-          <div className="summary-box">
-            <ReactMarkdown>{summary}</ReactMarkdown>
+            {summary && (
+              <div className="summary-box">
+                <ReactMarkdown>{summary}</ReactMarkdown>
+              </div>
+            )}
           </div>
-        )}
+        </main>
       </div>
-    </main>
+    </div>
   );
 }

@@ -69,68 +69,51 @@ export default function Login() {
     };
 
     return (
-        <div style={{ minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <form onSubmit={handleSubmit} className={styles.loginForm}>
-                <h2 style={{ textAlign: 'center' }}>
-                    {isLoggingInOrRegistering === 'isLoggingIn' ? 'Login' :
-                        isLoggingInOrRegistering === 'isRegistering' ? 'Register' : 'Logging in'}
-                </h2>
+        <div className={styles.pageContainer}>
+            <div className={styles.mainContent}>
+                <form onSubmit={handleSubmit} className={styles.loginForm}>
+                    <h2 style={{ textAlign: 'center' }}>
+                        {isLoggingInOrRegistering === 'isLoggingIn' ? 'Login' :
+                            isLoggingInOrRegistering === 'isRegistering' ? 'Register' : 'Logging in'}
+                    </h2>
 
-                {isLoggingInOrRegistering !== "isLoggedIn" && (
-                    <>
-                        <div>
-                            <label htmlFor="username">Username:</label>
-                            <input
-                                type="text"
-                                id="username"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="password">Password:</label>
-                            <input
-                                type="password"
-                                id="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </div>
-                        <button type="submit" disabled={isLoading}>
-                            {isLoading
-                                ? (isLoggingInOrRegistering === 'isLoggingIn' ? 'Logging in...' : 'Registering...')
-                                : (isLoggingInOrRegistering === 'isLoggingIn' ? 'Login' : 'Register')}
-                        </button>
-                    </>
-                )}
+                    {isLoggingInOrRegistering !== "isLoggedIn" && (
+                        <>
+                            <div>
+                                <label htmlFor="username">Username:</label>
+                                <input
+                                    type="text"
+                                    id="username"
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="password">Password:</label>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                            </div>
+                            <button type="submit" disabled={isLoading}>
+                                {isLoading ? 'Loading...' : isLoggingInOrRegistering === 'isLoggingIn' ? 'Login' : 'Register'}
+                            </button>
+                        </>
+                    )}
 
-                {isLoggingInOrRegistering === "isLoggedIn" && (
-                    <div className={styles.progressContainer}>
-                        <div className={styles.spinner}></div>
-                        <p>You have logged in! Redirecting now...</p>
+                    {error && <p className={styles.error}>{error}</p>}
+
+                    <div className={styles.switchForm}>
+                        {isLoggingInOrRegistering === 'isLoggingIn' ? (
+                            <p>Don't have an account? <button type="button" onClick={userRegister}>Register</button></p>
+                        ) : (
+                            <p>Already have an account? <button type="button" onClick={userLogin}>Login</button></p>
+                        )}
                     </div>
-                )}
-
-                {isLoggingInOrRegistering !== "isLoggedIn" && (
-                    <p style={{ textAlign: 'center' }}>
-                        {isLoggingInOrRegistering === 'isLoggingIn'
-                            ? "Don't have an account?"
-                            : 'Already have an account?'}
-                        <button
-                            type="button"
-                            onClick={isLoggingInOrRegistering === 'isLoggingIn' ? userRegister : userLogin}
-                            disabled={isLoading}
-                            style={{ marginLeft: '0.5rem', background: 'none', border: 'none', color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}
-                        >
-                            {isLoggingInOrRegistering === 'isLoggingIn' ? 'Register' : 'Login'}
-                        </button>
-                    </p>
-                )}
-
-                {error && (
-                    <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>
-                )}
-            </form>
+                </form>
+            </div>
         </div>
     );
 }

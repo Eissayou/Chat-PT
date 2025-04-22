@@ -1,47 +1,99 @@
 .sidebar {
-    position: fixed;
-    width: 250px;
-    height: 100vh;
-    background-color: #1f2937;
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .profilePicWrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .profilePic {
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .navList {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar.closed {
+  width: 60px;
+}
+
+.toggleButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.toggleButton:hover {
+  background-color: var(--color-background-hover);
+}
+
+.logo {
+  width: 60%;
+  height: auto;
+  margin: 2rem auto;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.link {
+  padding: 0.75rem 1rem;
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  background-color: var(--color-background-hover);
+  color: var(--color-primary);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
     width: 100%;
+    transform: translateX(-100%);
   }
-  
-  .link {
-    text-decoration: none;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 6px;
-    transition: background-color 0.2s ease-in-out;
+
+  .sidebar.open {
+    transform: translateX(0);
   }
-  
-  .link:hover {
-    background-color: #374151;
+
+  .sidebar.closed {
+    transform: translateX(-100%);
   }
-  
-  .active {
-    background-color: #374151;
+
+  .toggleButton {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
   }
+}
   

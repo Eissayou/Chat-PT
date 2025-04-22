@@ -1,6 +1,7 @@
 'use client'
 import { useState, useRef, useEffect } from "react";
 import styles from '../../ChatPage.module.css'; // Import the CSS Module
+import containerStyles from '../workoutplan/styles/Workouts.module.css';
 import useUserData from '../../../store/userData';
 import { shallow } from 'zustand/shallow';
 import deepEqual from 'fast-deep-equal'; 
@@ -130,6 +131,7 @@ export default function ChatPage() {
 
 
   return (
+    
     <div className={styles.chatContainer}>
       {/* Header */}
       <div className={styles.header}>

@@ -1,6 +1,7 @@
 /* ChatPage.module.css */
 
 .chatContainer {
+  
     margin: 2rem auto; /* Equivalent to my-8 mx-auto */
     max-width: 32rem; /* Equivalent to max-w-lg */
     height: calc(100vh - 4rem); /* Adjust height as needed */
@@ -60,6 +61,7 @@
   }
   
   .systemWrapper {
+    
     justify-content: center; /* Center system messages */
     margin-left: auto;
     margin-right: auto;
